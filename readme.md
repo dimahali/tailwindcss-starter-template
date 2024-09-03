@@ -120,4 +120,79 @@ The main JavaScript file is `src/js/app.js`. You can add your custom JavaScript 
 
 ## SEO Optimization
 
-Each page can have its own meta description and Open Graph image. Update the `pages` object
+Each page can have its own meta description and Open Graph image. Update the `pages` object in `vite.config.js` to customize SEO-related information for each page:
+
+```javascript
+const pages = {
+  '/index.html': {
+    title: 'Home',
+    metaDescription: 'Home Page Meta Description',
+    imageUrl: '/assets/images/og-image.png',
+  },
+  '/page/index.html': {
+    title: 'Nested page',
+    metaDescription: 'Sample Nested Page Meta Description',
+    imageUrl: '/assets/images/og-image.png',
+  }
+  // Add more pages as needed
+};
+```
+
+This configuration allows you to:
+- Set unique titles for each page
+- Provide custom meta descriptions
+- Specify Open Graph images for social media sharing
+
+The Handlebars templates will automatically use this information to populate the appropriate meta tags in the HTML head section of each page.
+
+## Performance Optimization
+
+This template includes several performance optimizations:
+
+1. **CSS Optimization**: The production build uses `cssnano` to minify and optimize CSS.
+2. **JavaScript Minification**: Vite automatically minifies JavaScript in production builds.
+3. **Font Loading**: The template uses a preconnect link for Google Fonts and loads the font stylesheet asynchronously to improve loading performance.
+4. **Responsive Images**: Use responsive image techniques and optimize images for different screen sizes.
+
+## Browser Support
+
+This template is designed to work with modern browsers. For older browser support, consider adding appropriate polyfills and adjusting the Browserslist configuration in `package.json`.
+
+## Deployment
+
+To deploy your site:
+
+1. Run `npm run build` to create a production-ready build.
+2. Upload the contents of the `dist` directory to your web server or hosting platform.
+
+For platform-specific deployment instructions, refer to the documentation of your chosen hosting provider.
+
+## Troubleshooting
+
+If you encounter any issues:
+
+1. Ensure all dependencies are installed (`npm install`).
+2. Check for any console errors in the browser developer tools.
+3. Verify that your Node.js version meets the minimum requirements.
+
+For more help, please open an issue on the GitHub repository.
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## Acknowledgements
+
+- [TailwindCSS](https://tailwindcss.com/)
+- [Vite](https://vitejs.dev/)
+- [Handlebars](https://handlebarsjs.com/)
